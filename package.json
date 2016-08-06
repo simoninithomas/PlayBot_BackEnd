@@ -1,0 +1,26 @@
+{
+  "name": "BackEnd",
+  "version": "1.0.0",
+  "description": "A BackEnd for our bot Sir PlayABot",
+  "keywords": [
+    "backend, mean, bot"
+  ],
+  "main": "server.js",
+  "homepage": "https://www.newsswipe.io",
+  "license": "Proprietary",
+  "author": {
+    "name": "SIMONINI Thomas",
+    "email": "simonini_thomas@outlook.fr",
+    "url": "http://www.simoninithomas.com"
+  },
+  "dependencies": {
+    "body-parser": ">1.0.1",
+    "express": ">4.0.0",
+    "express-jwt": "^3.4.0",
+    "express-stormpath": "^2.4.0",
+    "jsonwebtoken": "^7.0.1",
+    "mongoose": ">3.6.13",
+    "mongoose-random": "^0.1.1",
+    "path": "^0.12.7"
+  }
+}

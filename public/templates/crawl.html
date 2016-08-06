@@ -1,0 +1,17 @@
+<div class="container center">
+    <a href="#/home"><button class="btn btn-info">Back to menu</button></a>
+    <div class="row">
+        <h1>Crawl</h1>
+    </div>
+    <form>
+        <label>URL</label>
+        <input class="form-control" type="url" ng-model="crawl.link" required placeholder="Store link">
+
+        <p><br></p>
+        <div class="center">
+            <button class="btn btn-success" ng-click="crawlAndroid(crawl)" type="submit"  > <i class="fa fa-android fa-2x" aria-hidden="true"></i></button>
+            <button class="btn btn-danger" ng-click="crawlIOS(crawl)" type="submit"  > <i class="fa fa-apple fa-2x" aria-hidden="true"></i></button>
+
+        </div>
+
+    </form>

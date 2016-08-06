@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="center">
+        <h1><i class="fa fa-apple fa-4x" aria-hidden="true"></i></h1>
+        <h1 class="center"> Add a game</h1>
+        <h2>THIS PAGE IS ONLY TO ADD AN IOS GAME !</h2>
+        <a href="#/home">
+            <button class="btn btn-info">Back to menu</button>
+        </a>
+    </div>
+    <form>
+
+        <label>Application_Id</label>
+        <input class="form-control" type="text" ng-model="game.application_id" required placeholder="Application_id">
+
+        <label>Title</label>
+        <input class="form-control" type="text" ng-model="game.title.EN" required placeholder="Game Title">
+
+        <label>Store Link</label>
+        <input class="form-control" type="text" ng-model="game.link" placeholder="Link">
+
+        <label>Catchphrase EN</label>
+        <input class="form-control" type="text" ng-model="game.catchphrase.EN" placeholder="Catchphrase EN">
+
+        <label>Icon</label>
+        <input class="form-control" type="text" ng-model="game.icon" placeholder="Icon URL">
+
+        <label>Screenshot URL</label>
+        <input class="form-control" type="text" ng-model="game.screenshots" placeholder="Screenshots URL">
+
+        <label>Gif URL</label>
+        <input class="form-control" type="text" ng-model="game.gifs" placeholder="Gif Url">
+
+        <label>Promo video</label>
+        <input class="form-control" type="text" ng-model="game.promo_videos" placeholder="Promo video Url">
+
+        <label>Type</label>
+        <input class="form-control" type="text" ng-model="game.type" placeholder="Type of game (free/not)">
+
+        <label>Price</label>
+        <input class="form-control" type="number" ng-model="game.price" placeholder="Price">
+
+        <label>IAP?</label>
+        <input class="form-control" type="checkbox" ng-model="game.IAP" placeholder="Are IAP ?">
+
+        <label>Categories</label>
+        <input class="form-control" type="text" ng-model="game.categories" placeholder="Categories">
+
+        <label>Downloads_max</label>
+        <input class="form-control" type="number" ng-model="game.downloads_max" placeholder="Downloads max">
+
+        <label>Rating</label>
+        <input class="form-control" type="number" [min="0" ] [max="5" ] ng-model="game.rating" placeholder="Rating">
+
+        <label>Min OS version</label>
+        <input class="form-control" type="text" ng-model="game.minOSVersion" placeholder="Minimal OS version">
+
+        <label>Developer id</label>
+        <input class="form-control" type="text" ng-model="game.developer.devId" placeholder="Dev id">
+
+        <label>Developer name</label>
+        <input class="form-control" type="text" ng-model="game.developer.name" placeholder="Dev name">
+
+        <label>Developer email</label>
+        <input class="form-control" type="email" ng-model="game.developer.email" placeholder="Dev email">
+
+        <label>Developer website</label>
+        <input class="form-control" type="text" ng-model="game.developer.website" placeholder="Dev website">
+
+        <label>Is sponsorised ?</label>
+        <input class="form-control" type="checkbox" ng-model="game.isSponsorised" placeholder="Is sponsorised ?">
+
+        <label>Is broadcasted ?</label>
+        <input class="form-control" type="checkbox" ng-model="game.isBroadcasted" placeholder="Is broadcasted ?">
+
+        <p><br></p>
+        <button class="btn btn-primary" ng-click="addGameIos(game)" type="submit">Add Game</button>
+
+
+    </form>
+</div>

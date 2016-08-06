@@ -1,0 +1,146 @@
+<div class="container center">
+    <h1><i class="fa fa-android fa-4x" aria-hidden="true"></i></h1>
+    <h1 class=""> Game list Android </h1>
+    <h2> ONLY Android GAMES </h2>
+    <a href="#/home">
+        <button class="btn btn-info">Back to menu</button>
+    </a>
+    <table class="table center">
+        <thead>
+        <tr>
+            <th>_id</th>
+            <th>Application_Id</th>
+            <th>Title</th>
+            <th>Store Link</th>
+            <th>Catchphrases</th>
+            <th>Icon</th>
+            <th>Screenshot</th>
+            <th>Gif</th>
+            <th>Promo video</th>
+            <th>Type</th>
+            <th>Price</th>
+            <th>IAP?</th>
+            <th>Categories</th>
+            <th>Downloads_max</th>
+            <th>Website</th>
+            <th>Rating</th>
+            <th>Min OS version</th>
+            <th>Developer id</th>
+            <th>Developer name</th>
+            <th>Developer email</th>
+            <th>Developer website</th>
+            <th>Is sponsorised?</th>
+            <th>Is broadcasted ?</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr ng-repeat="game in games">
+            <td>{{game._id}}</td>
+            <td>{{game.application_id}}</td>
+            <td><a ng-href="#/games/android/{{game._id}}">{{game.title}}</a></td>
+            <td><a href="{{game.link}}">{{game.link}}</a></td>
+            <td>{{game.catchphrase}}</td>
+            <td><img style="max-width:50px; max-height:50px" src="{{game.icon}}"/></td>
+            <td><img style="max-width:500px; max-height:500px" src="{{game.screenshots}}"/>
+            <td><img style="max-width:500px; max-height:500px" src="{{game.gifs}}"/>
+            <td>{{game.promo_videos}}</td>
+            <td>{{game.type}}</td>
+            <td>{{game.price}}</td>
+            <td>{{game.IAP}}</td>
+            <td>{{game.categories}}</td>
+            <td>{{game.downloads_max}}</td>
+            <td>{{game.website}}</td>
+            <td>{{game.rating}}</td>
+            <td>{{game.minOSVersion}}</td>
+            <td>{{game.developer.devId}}</td>
+            <td>{{game.developer.name}}</td>
+            <td><a href="mailto:{{game.developer.email}}"></a>{{game.developer.email}}</td>
+            <td>{{game.developer.website}}</td>
+            <td>{{game.isSponsorised}}</td>
+            <td>{{game.isBroadcasted}}</td>
+
+            <td>
+                <div class="btn-group">
+                    <button class="btn btn-danger" ng-click="deleteGameAndroid(game._id)">Remove</button>
+                    <button class="btn btn-warning" ng-click="toggleEditAndroid(game)">Edit</button>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div ng-hide="editMode" class="container">
+    <h1 class="center"> Edit a game </h1>
+    <form>
+
+        <label>Application_Id</label>
+        <input class="form-control" type="text" ng-model="game.application_id" required placeholder="Application_id">
+
+        <label>Title</label>
+        <input class="form-control" type="text" ng-model="game.title.EN" required placeholder="Game Title">
+
+        <label>Store Link</label>
+        <input class="form-control" type="text" ng-model="game.link" placeholder="Link">
+
+        <label>Catchphrase EN</label>
+        <input class="form-control" type="text" ng-model="game.catchphrase.EN" placeholder="Catchphrase EN">
+
+        <label>Icon</label>
+        <input class="form-control" type="text" ng-model="game.icon" placeholder="Icon URL">
+
+        <label>Screenshot URL</label>
+        <input class="form-control" type="text" ng-model="game.screenshots" placeholder="Screenshots URL">
+
+        <label>Gif URL</label>
+        <input class="form-control" type="text" ng-model="game.gifs" placeholder="Gif Url">
+
+        <label>Promo video</label>
+        <input class="form-control" type="text" ng-model="game.promo_videos" placeholder="Promo video Url">
+
+        <label>Type</label>
+        <input class="form-control" type="text" ng-model="game.type" placeholder="Type of game (free/not)">
+
+        <label>Price</label>
+        <input class="form-control" type="number" ng-model="game.price" placeholder="Price">
+
+        <label>IAP?</label>
+        <input class="form-control" type="checkbox" ng-model="game.IAP" placeholder="Are IAP ?">
+
+        <label>Categories</label>
+        <input class="form-control" type="text" ng-model="game.categories" placeholder="Categories">
+
+        <label>Downloads_max</label>
+        <input class="form-control" type="number" ng-model="game.downloads_max" placeholder="Downloads max">
+
+        <label>Rating</label>
+        <input class="form-control" type="number" [min="0" ] [max="5" ] ng-model="game.rating" placeholder="Rating">
+
+        <label>Min OS version</label>
+        <input class="form-control" type="text" ng-model="game.minOSVersion" placeholder="Minimal OS version">
+
+        <label>Developer id</label>
+        <input class="form-control" type="text" ng-model="game.developer.devId" placeholder="Dev id">
+
+        <label>Developer name</label>
+        <input class="form-control" type="text" ng-model="game.developer.name" placeholder="Dev name">
+
+        <label>Developer email</label>
+        <input class="form-control" type="email" ng-model="game.developer.email" placeholder="Dev email">
+
+        <label>Developer website</label>
+        <input class="form-control" type="text" ng-model="game.developer.website" placeholder="Dev website">
+
+        <label>Is sponsorised ?</label>
+        <input class="form-control" type="checkbox" ng-model="game.isSponsorised" placeholder="Is sponsorised ?">
+
+        <label>Is broadcasted ?</label>
+        <input class="form-control" type="checkbox" ng-model="game.isBroadcasted" placeholder="Is broadcasted ?">
+
+        <p><br></p>
+        <button class="btn btn-primary" ng-click="editGameAndroid(game._id, game)" type="submit">Add Game</button>
+
+
+    </form>
+</div>
